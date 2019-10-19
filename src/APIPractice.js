@@ -27,7 +27,14 @@ class APIPractice extends Component {
 
   render() {
     return (
-      <div>{this.state.myGithubDatas.id}</div>
+      <div className="Profile">
+        <div className="Profile__ImageArea">
+          <img src={this.state.myGithubDatas.avatar_url} alt="Profile__Image"/>
+        </div>
+        <div className="Profile__Name">
+          {this.state.myGithubDatas.name}
+        </div>
+      </div>
     );
   }
 }
