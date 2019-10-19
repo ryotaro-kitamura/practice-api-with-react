@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import axios from "axios"
-import './App.css';
+import './api-practice.css';
 
 class APIPractice extends Component {
   constructor() {
@@ -26,13 +26,32 @@ class APIPractice extends Component {
   }
 
   render() {
+    const image = this.state.myGithubDatas.avatar_url;
+    const name = this.state.myGithubDatas.name;
+    const created_at = this.state.myGithubDatas.created_at
+    const updated_at = this.state.myGithubDatas.updated_at
+
+    const convertDateJson = (date) => {
+      if (date === undefined) {
+        return undefined
+      }
+      const newdate = date.split("T")[0].replace(/-/g, "/");
+      return newdate
+    }
     return (
       <div className="Profile">
+        <h1>My Github Profile</h1>
         <div className="Profile__ImageArea">
-          <img src={this.state.myGithubDatas.avatar_url} alt="Profile__Image"/>
+          <img src={image} alt="Profile__Image"/>
         </div>
         <div className="Profile__Name">
-          {this.state.myGithubDatas.name}
+          <p>My name is {name}</p>
+        </div>
+        <div className="Profile__Created_at">
+          <p>Github登録日: {convertDateJson(created_at)}</p>
+        </div>
+        <div className="Profile__Updated_at">
+          <p>Github最終更新日: {convertDateJson(updated_at)}</p>
         </div>
       </div>
     );

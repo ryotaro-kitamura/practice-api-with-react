@@ -1,0 +1,22 @@
+.Profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Profile__ImageArea {
+  width: 100px;
+  height: 100px;
+  border: 1px;
+}
+
+.Profile__ImageArea > img {
+  max-width: 100%;
+  max-height: 100%; 
+}
+
+.Profile__Name {
+  font-size: 16px;
+  font-weight: bold;
+}
