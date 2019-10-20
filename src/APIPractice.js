@@ -31,12 +31,12 @@ class APIPractice extends Component {
     const created_at = this.state.myGithubDatas.created_at
     const updated_at = this.state.myGithubDatas.updated_at
 
-    const convertDateJson = (date) => {
-      if (date === undefined) {
+    const convertDateJson = (datejson) => {
+      if (datejson === undefined) {
         return undefined
       }
-      const newdate = date.split("T")[0].replace(/-/g, "/");
-      return newdate
+      const date = datejson.split("T")[0].replace(/-/g, "/");
+      return date
     }
     return (
       <div className="Profile">
